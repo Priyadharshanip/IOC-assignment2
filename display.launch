@@ -1,0 +1,7 @@
+<launch>
+  <arg name="model" default="$(find mini_arm_urdf)/urdf/mini_arm.urdf"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find mini_arm_urdf)/rviz_config/mini_arm.rviz" required="false"/>
+</launch>
